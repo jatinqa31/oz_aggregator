@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--this was old Runnable code-->
+<suite name="Parallel Infinite Execution Suite">
+<!--    <listeners>	
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerAdapter"/>
+        <listener class-name="com.big.utils.AnnotationTransformer"/>
+    </listeners>-->
+    <test name="Test1">
+        <classes>
+	       <class name="login_page.oz_test"/>
+<!--   	       <class name="Login_page.DatabaseConnectionPool"/>-->
+	<!--   	        <methods>
+			            <include name="Orders_Zomato_Test"/>
+						<include name="Click_OKAY_BTN"/>
+			            <include name="Fetch_1st_Order_DIV_with_MUTE"/>
+		            </methods>
+               </class>-->
+	    </classes>
+    </test>
+</suite>

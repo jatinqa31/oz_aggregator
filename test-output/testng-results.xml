@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-19T09:48:07 IST" name="Parallel Infinite Execution Suite" finished-at="2025-03-19T09:48:07 IST" duration-ms="168">
+    <groups>
+    </groups>
+    <test started-at="2025-03-19T09:48:07 IST" name="Test1" finished-at="2025-03-19T09:48:07 IST" duration-ms="168">
+      <class name="login_page.logggg">
+        <test-method signature="Log()[pri:0, instance:login_page.logggg@19e0dffe]" started-at="2025-03-19T09:48:07 IST" name="Log" finished-at="2025-03-19T09:48:07 IST" duration-ms="33" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Log -->
+      </class> <!-- login_page.logggg -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Parallel Infinite Execution Suite -->
+</testng-results>

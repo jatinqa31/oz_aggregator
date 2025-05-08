@@ -1,0 +1,289 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>Oz_aggregator_Latest</groupId>
+  <artifactId>Oz_aggregator_Latest</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Oz_aggregator_Latest</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  	<profiles>
+	<profile>
+	<id>Regression</id>
+    <build>  
+<plugins>
+        <!--<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.1.0</version>
+        </plugin>
+        -->
+        
+      	<plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-surefire-plugin</artifactId>
+	        <version>3.0.0-M5</version>
+	        <configuration>
+	        	<!--<parallel>methods</parallel>  Or methods if you want method-level parallelism 
+	                <threadCount>4</threadCount>
+	                <useTestNG>true</useTestNG>-->
+	           <!--This is where testng.xml file should be located by default in src/test/resources-->  
+	            <!--<redirectTestOutputToFile>false</redirectTestOutputToFile> -->  
+		          <suiteXmlFiles>
+		            	<suiteXmlFile>testng.xml</suiteXmlFile>
+		          </suiteXmlFiles>  
+	<!--	           <argLine>-Xms512m -Xmx5120m</argLine>-->
+	        </configuration>
+        </plugin>
+        
+		<!--<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.2.1</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>  This binds the plugin to the "package" phase 
+                    <goals>
+                        <goal>shade</goal>  Creates the shaded JAR 
+                    </goals>
+                    <configuration>
+                        <createDependencyReducedPom>false</createDependencyReducedPom>  Disable reduced POM creation 
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact>  Include all dependencies 
+                                <excludes>
+                                    <exclude>META-INF/*.SF</exclude>  Exclude signature files (e.g., security files) 
+                                    <exclude>META-INF/*.DSA</exclude>
+                                    <exclude>META-INF/*.RSA</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>-->
+        
+    <!--<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.4.0</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <transformers>
+                            <transformer
+                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <mainClass>Login_page.Runner</mainClass>
+                            </transformer>
+                        </transformers>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+	-->    
+</plugins>
+</build>
+
+
+
+</profile>
+
+<!--<profile>
+	<id>Smoke</id>
+    <build>  
+        <plugins>
+      	<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.22.2</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+	</plugins>
+</build>
+</profile>-->
+</profiles>
+
+<!--  <dependencies>
+  This dependency is to read text from image file
+  <dependency>
+    <groupId>net.sourceforge.tess4j</groupId>
+    <artifactId>tess4j</artifactId>
+    <version>4.5.1</version>
+  </dependency>
+-->
+
+  <dependencies>
+
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.17.2</version> <!-- Use latest version -->
+</dependency>
+
+
+	<dependency>
+	    <groupId>com.codoid.products</groupId>
+	    <artifactId>fillo</artifactId>
+	    <version>1.22</version>
+	</dependency>
+
+  <!-- ExtentReports dependency -->
+    <dependency>
+        <groupId>com.aventstack</groupId>
+        <artifactId>extentreports</artifactId>
+        <version>5.0.9</version>
+    </dependency>
+    
+    
+	<dependency>
+	    <groupId>org.apache.pdfbox</groupId>
+	    <artifactId>pdfbox</artifactId>
+	    <version>2.0.27</version> <!-- use the latest version -->
+	</dependency>
+
+
+    <dependency>
+        <groupId>com.aventstack</groupId>
+        <artifactId>extentreports</artifactId>
+        <version>5.1.0</version>
+    </dependency>
+
+   	
+	<dependency>
+		<groupId>com.aventstack</groupId>
+		<artifactId>extentreports-testng-adapter</artifactId>
+		<version>1.2.2</version>
+	</dependency>
+   	
+	<dependency>
+	    <groupId>io.github.bonigarcia</groupId>
+	    <artifactId>webdrivermanager</artifactId>
+	    <version>5.7.0</version>
+	</dependency>
+
+  	<!-- https://mvnrepository.com/artifact/com.codoid.products/fillo -->
+<!--	<dependency>
+	    <groupId>com.codoid.products</groupId>
+	    <artifactId>fillo</artifactId>
+	    <version>1.22</version>
+	</dependency>
+-->
+<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+<!--	<dependency>
+	    <groupId>org.apache.pdfbox</groupId>
+	    <artifactId>pdfbox</artifactId>
+	    <version>3.0.2</version>
+	</dependency>
+-->
+	
+	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+	<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.18.24</version>
+	    <scope>provided</scope>
+	</dependency>
+
+
+	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>4.9.0</version>
+	</dependency>
+
+ 	<dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.27</version> <!-- Use the latest version -->
+    </dependency>
+    
+    <!-- HikariCP (Connection Pooling) -->
+    <!--<dependency>
+        <groupId>com.zaxxer</groupId>
+        <artifactId>HikariCP</artifactId>
+        <version>5.0.0</version>  Make sure to use the latest version 
+    </dependency>
+    -->
+    
+	<dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>7.8.0</version>
+	    <!--<scope>compile</scope>-->
+	</dependency>
+    
+<!--	<dependency>
+	    <groupId>com.aventstack</groupId>
+	    <artifactId>extentreports</artifactId>
+	    <version>5.0.0</version>
+	</dependency>-->
+	
+<!--	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>2.13.3</version>
+	</dependency>
+	
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>4.1.2</version>
+</dependency>-->
+
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>2.24.3</version> <!-- Check for the latest version -->
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-api</artifactId>
+	    <version>2.24.3</version> <!-- Check for the latest version -->
+	</dependency>
+	
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>
+        <version>2.24.3</version> <!-- Use the latest version available -->
+    </dependency>
+	
+<!--	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-http-jdk-client</artifactId>
+        <version>4.8.1</version>
+	</dependency>-->
+
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-simple</artifactId>
+	    <version>2.0.7</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+	<!--<dependency>
+	    <groupId>io.github.bonigarcia</groupId>
+	    <artifactId>webdrivermanager</artifactId>
+	    <version>5.8.0</version>
+	</dependency>-->
+  </dependencies>
+</project>
