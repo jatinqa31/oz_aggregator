@@ -1,1 +1,29 @@
+{
+  "name": "Java Selenium TestNG Maven Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/java:17-bullseye",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/maven:2": {
+      "version": "3.9.3"
+    }
+  },
+  "postCreateCommand": "mvn clean install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "pflannery.vscode-versionlens"  // Optional, for version management
+      ]
+    }
+  },
+  "mounts": [
+    "source=/path/to/your/selenium/drivers,target=/usr/local/bin,readonly"
+  ],
+  "forwardPorts": [8080],  // if your Selenium test spins up a server
+  "portsAttributes": {
+    "8080": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  }
+}
 
